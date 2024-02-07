@@ -44,3 +44,6 @@ tasks {
         token.set(System.getenv("PUBLISH_TOKEN"))
     }
 }
+dependencies{
+    implementation("com.ctrip.framework.apollo:apollo-openapi:2.2.0")
+}

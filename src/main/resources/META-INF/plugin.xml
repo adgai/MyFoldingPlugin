@@ -29,5 +29,9 @@
         <codeInsight.codeVisionProvider implementation="com.example.plugin.GetMappingUrlProvider"/>
         <lang.foldingBuilder language="JAVA"
                              implementationClass="com.example.myinlayhints.MyFoldingBuilder"/>
+
+        <projectConfigurable instance="com.example.myinlayhints.MyPluginConfigurable" displayName="My Plugin Configuration" />
+        <projectService serviceImplementation="com.example.myinlayhints.MyPluginProjectSettings"/>
+
     </extensions>
 </idea-plugin>
