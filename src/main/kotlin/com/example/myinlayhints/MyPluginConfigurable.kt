@@ -5,6 +5,7 @@ import com.intellij.openapi.project.Project
 import com.intellij.ui.components.JBLabel
 import com.intellij.ui.components.JBTextField
 import com.intellij.util.ui.FormBuilder
+import java.awt.BorderLayout
 import javax.swing.JComponent
 import javax.swing.JPanel
 
@@ -23,7 +24,7 @@ class MyPluginConfigurable(private val project: Project) : Configurable {
         emptyText.text = "请输入方法签名多个逗号拼接，默认为：configUtils.getBool,configUtils.getBoolean"
     }
 
-    override fun getDisplayName(): String = "My Plugin Configuration"
+    override fun getDisplayName(): String = "ApolloConfigVisualization Setting"
 
     override fun createComponent(): JComponent {
         val panel = FormBuilder.createFormBuilder()
@@ -32,7 +33,19 @@ class MyPluginConfigurable(private val project: Project) : Configurable {
             .addLabeledComponent(JBLabel("URL: "), urlField, 4, false)
             .addLabeledComponent(JBLabel("ServiceName: "), serviceNameField, 4, false)
             .panel
-        return panel
+
+
+        // 创建外部面板并设置布局管理器
+        val outerPanel = JPanel(BorderLayout())
+
+        // 将 FormBuilder 创建的面板添加到外部面板的中央
+        outerPanel.add(panel, BorderLayout.NORTH)
+
+        // 可以在这里继续添加其他组件到 outerPanel 的其他区域（如 NORTH, SOUTH, EAST, WEST）
+
+
+
+        return outerPanel
     }
 
     override fun isModified(): Boolean {

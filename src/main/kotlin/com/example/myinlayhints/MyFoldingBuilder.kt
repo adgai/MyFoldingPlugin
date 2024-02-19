@@ -115,7 +115,7 @@ class MyFoldingBuilder : FoldingBuilder {
         }
 
 
-        return "xxxxxxxxxxxxxxxxxxx"
+        return ""
     }
 
     override fun isCollapsedByDefault(node: ASTNode): Boolean {

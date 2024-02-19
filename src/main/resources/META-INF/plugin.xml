@@ -26,11 +26,12 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-        <codeInsight.codeVisionProvider implementation="com.example.plugin.GetMappingUrlProvider"/>
-        <lang.foldingBuilder language="JAVA"
-                             implementationClass="com.example.myinlayhints.MyFoldingBuilder"/>
-
-        <projectConfigurable instance="com.example.myinlayhints.MyPluginConfigurable" displayName="My Plugin Configuration" />
+        <lang.foldingBuilder language="JAVA" implementationClass="com.example.myinlayhints.MyFoldingBuilder"/>
+        <projectConfigurable
+                id="ApolloConfigVisualizationSetting"
+                groupId="tools"
+                instance="com.example.myinlayhints.MyPluginConfigurable"
+                             displayName="ApolloConfigVisualization Setting"/>
         <projectService serviceImplementation="com.example.myinlayhints.MyPluginProjectSettings"/>
 
     </extensions>
