@@ -35,4 +35,9 @@
         <projectService serviceImplementation="com.example.myinlayhints.MyPluginProjectSettings"/>
 
     </extensions>
+
+      <projectListeners>
+        <listener class="com.example.myinlayhints.FileOpenListener"
+                  topic=" com.intellij.openapi.fileEditor.FileEditorManagerListener"/>
+      </projectListeners>
 </idea-plugin>
